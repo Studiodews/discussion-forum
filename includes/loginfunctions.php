@@ -53,6 +53,16 @@ include'dbconfig.php';
     }
   } 
   
+  /**
+   * log out from the forum 
+   * */
+   function logout()
+   {
+     if(isset($_SESSION['athorized']))
+    {
+        unset($_SESSION['athorized']);
+    }
+   }
   
 
 ?>
