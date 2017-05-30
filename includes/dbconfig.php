@@ -27,4 +27,8 @@ $con =mysql_connect(DBHOST,DBUSER,DBPASSWORD)or die("connection to database fail
 $con=mysql_select_db(DBNAME,$con) or die("select database failed ".Mysql_error());
 
 //echo "connection done";
+
+//global error buffer
+$error=array();
+
 ?>
