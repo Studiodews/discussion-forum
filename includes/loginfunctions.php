@@ -70,7 +70,7 @@ include'dbconfig.php';
     function printError()
     {
         global $error;
-        $error[]="test error";
+       // $error[]="test error";
         if(isset($error))
         {
              
@@ -85,5 +85,24 @@ include'dbconfig.php';
   //signin("admin","admina");
   //printError();
   //print_r($error); 
+  /**
+    * print error buffer content in an unorderd list
+    * */
+    function printErrorList()
+    {
+        global $error;
+      //  $error[]="test error";
+        echo "<ul id='errorList'>";
+        if(isset($error))
+        {
+             
+            for($i=0;$i<=count($error);$i++)
+            {
+                $er=array_pop($error);
+                echo "<li>".$er."</li>";
+            }
+        }
+        echo "</ul>";
+    }
 
 ?>
