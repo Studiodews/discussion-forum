@@ -9,4 +9,5 @@
 	<link rel="stylesheet" href="../styles/style.css" type="text/css">
 </head>
 <body>
+<div id="wrapper">
 <div class="logo"><h1>Discussion Forum</h1></div>
