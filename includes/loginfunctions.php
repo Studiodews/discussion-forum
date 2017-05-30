@@ -35,5 +35,24 @@ include'dbconfig.php';
  }
  
  //signin("admin","admin"); 
+ 
+ /**
+  * check if user signed in or not
+  * @return boolean true if signed or false
+  * */
+   
+  function isSignedIn()
+  {
+    if(isset($_SESSION['athorized']))
+    {
+        return true;
+    }
+    else
+    {
+        return false;
+    }
+  } 
+  
+  
 
 ?>
