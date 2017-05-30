@@ -63,6 +63,27 @@ include'dbconfig.php';
         unset($_SESSION['athorized']);
     }
    }
+   
+   /**
+    * print error buffer content each in new line
+    * */
+    function printError()
+    {
+        global $error;
+        $error[]="test error";
+        if(isset($error))
+        {
+             
+            for($i=0;$i<=count($error);$i++)
+            {
+                $er=array_pop($error);
+                echo $er.'<br/>';
+            }
+        }
+    }
   
+  //signin("admin","admina");
+  //printError();
+  //print_r($error); 
 
 ?>
