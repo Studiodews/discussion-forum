@@ -23,8 +23,10 @@ include'dbconfig.php';
     {
         $_SESSION['athorized']=true;
         $row=mysql_fetch_assoc($result);
-        $_SESSION['userID']=$row->userID;
-        header("location:../");
+        $_SESSION['userID']=$row['userID'];
+        $_SESSION['userName']=$row['userName'];
+        $_SESSION['userLevel']=$row['userLevel'];
+        header("location:./");
         exit();
     }
     else
