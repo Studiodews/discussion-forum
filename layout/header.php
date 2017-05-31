@@ -6,7 +6,7 @@
 	<meta name="description" content="A short description." />
 	<meta name="keywords" content="put, keywords, here" />
 	<title>PHP-Discussion forum</title>
-	<link rel="stylesheet" href="../styles/style.css" type="text/css">
+	<link rel="stylesheet" href="./styles/style.css" type="text/css">
 </head>
 <body>
 <div id="wrapper">
