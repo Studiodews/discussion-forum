@@ -14,8 +14,8 @@ if(isset($_GET['id']))
                 if(mysql_num_rows($result)==1)
                 {
                     $row=mysql_fetch_assoc($result);
-                    echo "<table ><tr><td>{$row['topicTitle']} By {$row['userName']} At ".date('d-m-Y', strtotime($row['topicDate']))."</td></tr>";
-                echo "<tr id=\"content\" ><td>{$row['topicSubject']}</td></tr></table>";
+                    echo "<table ><tr><td id=\"th\">\"{$row['topicTitle']}\" by \"{$row['userName']}\" at ".date('d-m-Y', strtotime($row['topicDate']))."</td></tr>";
+                echo "<tr id=\"postContent\" ><td>{$row['topicSubject']}</td></tr></table>";
                 }
                 
                 $sql="SELECT fposts.postContent,
@@ -30,8 +30,8 @@ if(isset($_GET['id']))
                     $result= mysql_query($sql)or die("query failed ".mysql_error());
                     while( $row=mysql_fetch_assoc($result))
                     {
-                        echo "<table  id=\"post\"><tr><td>By {$row['userName']} At ".date('d-m-Y', strtotime($row['postDate']))."</td></tr>";
-                echo "<tr id=\"content\" ><td>{$row['postContent']}</td></tr></table>";
+                        echo "<table  id=\"post\"><tr><td id=\"th\">by \"{$row['userName']}\" at ".date('d-m-Y', strtotime($row['postDate']))."</td></tr>";
+                echo "<tr id=\"postContent\" ><td>{$row['postContent']}</td></tr></table>";
                     }
                     
  include 'reply.php';             
