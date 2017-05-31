@@ -20,7 +20,7 @@
         {
             echo "</div>";
             echo '<div id="userbar">';
-            echo '<a href="signin.php">Sign in</a> or <a href="sign up">register</a>.';
+            echo '<a href="signin.php">Sign in</a> or <a href="signup.php">register</a>.';
         }
         ?>
 		
