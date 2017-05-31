@@ -1,6 +1,10 @@
 <div id="menu">
 		<a class="item" href="index.php">Home</a> 
         <?php
+        if(isset($_GET['signout']))
+        {
+            logout();
+        }
         if(isSignedIn())
         {
             echo '- <a class="item" href="newtopic.php">Create a topic</a> ';
@@ -10,7 +14,7 @@
             }
             echo "</div>";
             echo '<div id="userbar">';
-            echo 'Hello ' . $_SESSION['userName'] . '  | <a href="../?signout">Sign out</a>';
+            echo 'Hello ' . $_SESSION['userName'] . '  | <a href="./?signout">Sign out</a>';
         } 
         else
         {
