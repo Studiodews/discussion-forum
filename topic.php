@@ -18,7 +18,23 @@ if(isset($_GET['id']))
                 echo "<tr id=\"content\" ><td>{$row['topicSubject']}</td></tr></table>";
                 }
                 
-              
+                $sql="SELECT fposts.postContent,
+                    fposts.postTopic,
+                    fposts.postDate,
+                    fposts.author,
+                    fusers.userName,
+                    fusers.userID
+                    FROM
+                    fposts LEFT JOIN  fusers ON fposts.author=fusers.userID
+                    WHERE fposts.postTopic = $topicID";
+                    $result= mysql_query($sql)or die("query failed ".mysql_error());
+                    while( $row=mysql_fetch_assoc($result))
+                    {
+                        echo "<table  id=\"post\"><tr><td>By {$row['userName']} At ".date('d-m-Y', strtotime($row['postDate']))."</td></tr>";
+                echo "<tr id=\"content\" ><td>{$row['postContent']}</td></tr></table>";
+                    }
+                    
+ include 'reply.php';             
 }
 
 include 'layout/footer.php';
