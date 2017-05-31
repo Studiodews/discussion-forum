@@ -12,6 +12,7 @@ if(isset($_GET['id']))
     echo "<p>{$row['catDesc']}</p>" ;
     echo "<table><tr><th>Topic</th><th>Author</th><th>Date</th></tr>";
     $sql="SELECT ftopics.topicTitle,
+                ftopics.topicID,
                 ftopics.topicDate,
                 fusers.userName
                 From ftopics , fusers WHERE ftopics.author=fusers.userID AND ftopics.topicCat=$catID";
@@ -20,7 +21,7 @@ if(isset($_GET['id']))
                 {
                 while($row=mysql_fetch_assoc($result))
                 {
-                    echo "<tr><td>{$row['topicTitle']}</td><td>{$row['userName']}</td><td>".date('d-m-Y', strtotime($row['topicDate']))."</td></tr>";
+                    echo "<tr><td><a href=\"topic.php?id={$row['topicID']}\">{$row['topicTitle']}</a></td><td>{$row['userName']}</td><td>".date('d-m-Y', strtotime($row['topicDate']))."</td></tr>";
                 }
                 }
                 else
